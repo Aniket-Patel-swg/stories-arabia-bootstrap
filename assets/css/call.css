@@ -292,4 +292,20 @@
     background-size: cover;
     min-height: 400px;
   }
-  
+  .call-heading{
+    margin-top: 4rem;
+    margin-left: 0px;
+    padding-left: 0px;
+    font-weight: 800;
+  }
+
+  .number-input{
+    margin-left: 1rem;
+  }
+  .timing-input{
+    margin-left: 1rem;
+  }
+  .message{
+    margin-left: 1rem;
+    width: 50%;
+  }
