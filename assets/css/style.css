@@ -1,11 +1,3 @@
-/**
-* Template Name: Gp
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -69,6 +61,17 @@ h6 {
   opacity: 1;
 }
 
+.whatsapp{
+  border-radius: 2.5rem;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+}
+.whatsapp img{
+  max-width: 40px;
+  border-radius: 2.5rem;
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -710,7 +713,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&w=600") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -994,7 +997,7 @@ section {
 }
 
 .counts .image {
-  background: url("../img/counts-img.jpg") center center no-repeat;
+  background: url("https://images.pexels.com/photos/2883160/pexels-photo-2883160.jpeg?auto=compress&cs=tinysrgb&w=600") center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
