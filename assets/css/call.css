@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .whatsapp{
     border-radius: 2.5rem;
     position: fixed;
@@ -301,11 +304,72 @@
 
   .number-input{
     margin-left: 1rem;
+    padding: 0.5rem;
+    font-weight: 100;
+    width: 70%;
   }
   .timing-input{
     margin-left: 1rem;
+    padding: 0.5rem;
+    font-weight: 100;
+    width: 25%;
   }
   .message{
     margin-left: 1rem;
     width: 50%;
+    padding: 0.5rem;
+    font-weight: 100;
+    width: 70%;
+  }
+
+  .call-submit{
+    background: #ffc451;
+    border: 0;
+    padding: 10px 24px;
+    color: #151515;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-left: 1.3rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 998px) {
+    .call-heading{
+      margin-top: 6rem;
+    }
+    .number-input{
+      width: 90%;
+    }
+    .timing-input{
+      width: 30%;
+    }
+    .message{
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 764px) {
+    .container{
+      padding: 0.2rem 0px;
+    }
+    .call-heading{
+      margin-top: 4rem;
+    }
+    .number-input{
+      width: 80%;
+      padding: 0.4rem;
+    }
+    .timing-input{
+      width: 30%;
+      padding: 0.4rem;
+    }
+    .message{
+      width: 80%;
+      padding: 0.4rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .timing-input{
+      width: 25%;
+    }
   }
