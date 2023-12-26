@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -23,6 +22,14 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("VcxwYN5a1Qgig88yV");
+    })();
+  </script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/call.css" rel="stylesheet">
@@ -92,7 +99,7 @@
           <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
             <i class="bx bx-phone"></i>
             <h4>Your Phone Number</h4>
-            <input type="tel" id="number" name="number" class="number-input" required placeholder="Your Number" />
+            <input type="tel" id="number" name="number" class="number-input" placeholder="Your Number" />
           </div>
 
           <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
@@ -107,7 +114,7 @@
             <input type="date" id="date" name="date" class="timing-input"></input>
             <input type="time" id="timing" name="timing" class="timing-input"></input>
           </div>
-          
+
           <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
             <i class="bx bx-building"></i>
             <h4>Any Message for us?</h4>
@@ -143,12 +150,13 @@
       var date = document.getElementById("date").value;
       var timing = document.getElementById("timing").value;
       var message = document.getElementById("message").value;
-      var name = document.getElementById("names").value;
       var number = document.getElementById("number").value;
+      var email = document.getElementById("email").value;
+      var names = document.getElementById("text").value;
 
       // Create a data object to send to the server
       var formData = {
-        name: name,
+        name: names,
         number: number,
         email: email,
         date: date,
@@ -156,24 +164,47 @@
         message: message
       };
 
+      // Validate empty fields
+      if (names.trim() === "") {
+        alert("Name field cannot be empty.");
+        return;
+      }
+
+      // Validate email format
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      let params = {
+        name : names,
+        number: number,
+        email: email,
+        date: date,
+        timing: timing,
+        message: message
+      }
+
       console.log(formData);
+      emailjs.send("service_jmu55ti","template_cklttsr",params).then(alert("Email has been sent!"))
       // Send the data to the server using AJAX (you can use a library like Axios or Fetch)
       // Replace 'your_server_script.php' with the actual path to your PHP script
-      fetch('server_script.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-        .then(response => response.json())
-        .then(data => {
-          // Handle the response from the server if needed
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+      // fetch('server_script.php', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
+      //   .then(response => response.json())
+      //   .then(data => {
+      //     // Handle the response from the server if needed
+      //     console.log(data);
+      //   })
+      //   .catch(error => {
+      //     console.error('Error:', error);
+      //   });
     }
   </script>
 
@@ -182,5 +213,3 @@
 </body>
 
 </html>
-
-
